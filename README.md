@@ -27,10 +27,8 @@ GET
 
 ###请求参数
 
-|*名称*|*必选*|*类型及范围*|*说明*|
-|------------------------------|
-|key|True|string|搜索的关键字|
-|page|True|int，缺省值为1|搜索结果的页数|
+key：必填，搜索时的关键词，string类型
+page：必填，搜索结果的页数，int类型
 
 ###返回结果
 ####JSON实例：
@@ -47,15 +45,17 @@ GET
 字段说明-url：  搜索结果的网址
 ###其他
 phpdemo：
-```<?php
+```
+<?php
 $res=json_decode(file_get_contents('http://103.253.147.155:5000/search?key=asd&page=4'));
 foreach ($res as $key
 ) 
 {
 echo "<a href=\"$key->url\">$key->title</a><br>";
 }
-?>```
+?>
+```
 
 server端源码：
-https://github.com/Ph0enixxx/GoogleSearchAPI
+[https://github.com/Ph0enixxx/GoogleSearchAPI](https://github.com/Ph0enixxx/GoogleSearchAPI)
 
